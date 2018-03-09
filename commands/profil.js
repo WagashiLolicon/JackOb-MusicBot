@@ -33,7 +33,7 @@ message.delete(message.author)
  message.channel.sendMessage({
     embed: {
       type: 'rich',
-      description: `***Requested by : ${message.author.username}***`,
+      description: ``,
       fields: [{
         name: ':label: Nickname',
         value: getvalueof.username,
@@ -55,9 +55,6 @@ message.delete(message.author)
         value: checkbot,
         inline: true
 }],
-    image: {
-  url: getvalueof.avatarURL
-    },
       color: 0xE46525,
       footer: {
         text: 'by N_atha_n',
