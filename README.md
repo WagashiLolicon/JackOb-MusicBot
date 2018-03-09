@@ -15,7 +15,7 @@
 * The Bot prefix is **n!**.
 * For Help enter n!help.
 
-##Commandes
+## Commandes
 
 The Discord Bot have **29** commandes.
 **8** Commandes for Administration
