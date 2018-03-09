@@ -52,7 +52,7 @@ message.delete(message.author)
         inline: true
 },{
         name: 'Nickname',
-	value: member.nickname,
+	value: member.nickname ? member.nickname : "None",
 	inline: true
 },{
         name: 'Status',
@@ -64,7 +64,7 @@ message.delete(message.author)
         inline: true
 },{
 	name: 'Playing',
-	value: user.presence.game,
+	value: user.presence.game ? member.presence.game : "None",
 	inline: true
 },{
         name: 'Registered',
