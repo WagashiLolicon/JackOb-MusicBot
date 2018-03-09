@@ -12,6 +12,4 @@
 
 ## Others
 
-
-* Join [Discord server](https://discord.gg/c2cAPF5) for suggestion or support
-
+* Join [MultiGames'Serv](https://discord.gg/c2cAPF5) for suggestion or support
