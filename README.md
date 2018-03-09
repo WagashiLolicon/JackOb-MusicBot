@@ -2,9 +2,14 @@
 
 #### Jack'Ob used the library Discord.js
 
+
 [![Servers badge](https://discordbots.org/api/widget/servers/382925120051871744.svg)](https://discordbots.org/bot/285326901331886101)
 [![Status badge](https://discordbots.org/api/widget/status/382925120051871744.svg)](https://discordbots.org/bot/285326901331886101)
+
 
 | Les tableaux  | C'est            |
 | ------------- |:----------------:|
 | ------------- | alignée à droite |
+
+
+* Join [Discord server](https://discord.gg/c2cAPF5) for suggestion or support
