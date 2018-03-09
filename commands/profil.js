@@ -1,67 +1,97 @@
-const statusMap = {
-  'online': '<:online:313956277808005120>',
-  'streaming': '<:straming:313956277132853248>',
-  'idle': '<:away:313956277220802560>',
-  'dnd': '<:dnd:313956276893646850>',
-  'offline': '<:offline:313956277237710868>'
-}
-const colorMap = {
-  'online': 0x157c13,
-  'streaming': 0x7c135a,
-  'idle': 0xdfb616,
-  'dnd': 0xab2317,
-  'offline': 0x000000
-};
+const Discord = require('discord.js');
 
-exports.run = (client, m, args) => {
-  function uinfo(channel, user, member) {
-    channel.send({
-			embed: {
-				author: {name: user.username+'\'s information'},
-				fields: [{
-					name: 'Username',
-					value: user.username,
-					inline: true
-				}, {
-					name: 'Nickname',
-					value: member.nickname ? member.nickname : "None",
-					inline: true
-				},{
-					name: 'ID',
-					value: user.id,
-					inline: true
-				},{
-					name: 'Discriminator',
-					value: '#'+user.discriminator,
-					inline: true
-				},{
-					name: 'Status',
-					value: statusMap[user.presence.status],
-					inline: true
-				},{
-					name: 'Playing',
-					value: user.presence.game ? user.presence.game.name : "None",
-					inline: true
-				},{
-					name: 'Registered',
-					value: new Date(user.createdAt).toISOString().replace(/T/, ' ').replace(/\..+/, ''),
-					inline: true
-				},{
-					name: 'Joined',
-					value: new Date(member.joinedAt).toISOString().replace(/T/, ' ').replace(/\..+/, ''),
-					inline: true
-				}],
-        thumbnail: {
-          url: `${user.avatarURL ? user.avatarURL : ""}`
-        },
-				color: colorMap[user.presence.status]
-			}
-		});
+exports.run = (client, message, args, member, user, channel) => {
+	
+var memberavatar = message.author.avatarURL
+var membername = message.author.username
+
+  var mentionned = message.mentions.users.first();
+  var getvalueof;
+	
+  if(mentionned){
+      var getvalueof = mentionned;
+  } else {
+      var getvalueof = message.author;
   }
 
-  if (m.mentions.users.first()) return uinfo(m.channel, m.mentions.users.first(), m.guild.member(m.mentions.users.first()))
-  else if (args && system.getUser(m, args)) return uinfo(m.channel, system.getUser(m, args).user, system.getUser(m, args))
-  else return uinfo(m.channel, m.author, m.member);
+  if(getvalueof.bot == true){
+    var checkbot = "L'utilisateur est un Bot";
+} else {
+    var checkbot = "L'utilisateur n'est pas un Bot";
+  }
+  if(getvalueof.presence.status == 'online'){
+    var status = "Online";
+} else {
+    var status = "Offline";
+  }
+  if(getvalueof.presence.status == 'dnd'){
+    var status = "Ne pas Déranger";
+  }
+  if(getvalueof.presence.status == 'idle'){
+    var status = "Absent";
+  } else {
+  if(getvalueof.presence.status == 'invisible')
+    var status = "Invisible"
+  }
+message.delete(message.author)
+ channel.send({
+    embed: {
+      type: 'rich',
+      description: `***Requested by : ${message.author.username}***`,
+      fields: [{
+        name: ':label: Nickname',
+        value: getvalueof.username,
+        inline: true
+},{
+        name: ':id: Tag',
+        value: getvalueof.id,
+        inline: true
+},{
+        name: ':hash:',
+        value: getvalueof.discriminator,
+        inline: true
+},{
+        name: 'Nickname',
+	value: member.nickname ? member.nickname : "None",
+	inline: true
+},{
+        name: 'Status',
+        value: status,
+        inline: true
+},{
+        name: ':robot: ChekBot',
+        value: checkbot,
+        inline: true
+},{
+	name: 'Playing',
+	value: user.presence.game ? user.presence.game.name : "None",
+	inline: true
+},{
+        name: 'Registered',
+	value: new Date(user.createdAt).toISOString().replace(/T/, ' ').replace(/\..+/, ''),
+	inline: true
+},{
+	name: 'Joined',
+	value: new Date(member.joinedAt).toISOString().replace(/T/, ' ').replace(/\..+/, ''),
+	inline: true
+}],
+	    
+    image: {
+  url: getvalueof.avatarURL
+    },
+      color: 0xE46525,
+      footer: {
+        text: 'by N_atha_n',
+        proxy_icon_url: ' '
+      },
+
+      author: {
+        name: membername,
+        icon_url: memberavatar,
+        proxy_icon_url: ' '
+      }
+    }
+}).then(response => { response.delete(25000) });
 };
 
 exports.conf = {
