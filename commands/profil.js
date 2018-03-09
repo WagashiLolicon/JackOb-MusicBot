@@ -57,7 +57,7 @@ message.delete(message.author)
 }],
       color: 0xE46525,
       footer: {
-        text: 'by N_atha_n',
+        text: '',
         proxy_icon_url: ' '
       },
 
