@@ -58,14 +58,6 @@ message.delete(message.author)
         name: ':robot: ChekBot',
         value: checkbot,
         inline: true
-},{
-        name: 'Registered',
-	value: new Date(user.createdAt).toISOString().replace(/T/, ' ').replace(/\..+/, ''),
-	inline: true
-},{
-	name: 'Joined',
-	value: new Date(member.joinedAt).toISOString().replace(/T/, ' ').replace(/\..+/, ''),
-	inline: true
 }],
 	    
     image: {
