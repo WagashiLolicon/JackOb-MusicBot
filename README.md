@@ -18,8 +18,8 @@
 ## Commandes
 
 The Discord Bot have **29** commandes.
-**8** Commandes for Administration
-**21** Commandes about Informations or Fun
+\n**8** Commandes for Administration
+\n**21** Commandes about Informations or Fun
 
 ## Others
 
