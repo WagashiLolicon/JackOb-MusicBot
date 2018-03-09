@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 
-exports.run = (client, message, args, member, user, channel) => {
+exports.run = (client, message, args, member, user) => {
 	
 var memberavatar = message.author.avatarURL
 var membername = message.author.username
@@ -34,7 +34,7 @@ var membername = message.author.username
     var status = "Invisible"
   }
 message.delete(message.author)
- channel.send({
+ message.channel.sendEmbed({
     embed: {
       type: 'rich',
       description: `***Requested by : ${message.author.username}***`,
