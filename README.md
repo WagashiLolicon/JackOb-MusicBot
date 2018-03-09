@@ -4,10 +4,10 @@
 [![Status badge](https://discordbots.org/api/widget/status/382925120051871744.svg)](https://discordbots.org/bot/285326901331886101)
 
 
-|  Version  |  Actuelle  | Développement |
-| --------- |  --------- | ------------- |
-|           |     2.0    |      2.1      |
-|           |      /     |      2.2      |
+   Version  |  Actuelle  | Développement |
+            |  --------- | ------------- |
+            |     2.0    |      2.1      |
+            |      /     |       /       |
 
 ## Others
 
