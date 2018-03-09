@@ -34,7 +34,7 @@ var membername = message.author.username
     var status = "Invisible"
   }
 message.delete(message.author)
- message.channel.sendEmbed({
+ message.channel.send({
     embed: {
       type: 'rich',
       description: `***Requested by : ${message.author.username}***`,
