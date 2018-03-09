@@ -51,10 +51,6 @@ message.delete(message.author)
         value: getvalueof.discriminator,
         inline: true
 },{
-        name: 'Nickname',
-	value: member.nickname ? member.nickname : "None",
-	inline: true
-},{
         name: 'Status',
         value: status,
         inline: true
@@ -62,10 +58,6 @@ message.delete(message.author)
         name: ':robot: ChekBot',
         value: checkbot,
         inline: true
-},{
-	name: 'Playing',
-	value: user.presence.game ? member.presence.game : "None",
-	inline: true
 },{
         name: 'Registered',
 	value: new Date(user.createdAt).toISOString().replace(/T/, ' ').replace(/\..+/, ''),
