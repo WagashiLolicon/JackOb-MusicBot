@@ -1,13 +1,9 @@
 const Discord = require('discord.js');
-
-exports.run = (client, message, args, member, user) => {
-	
+exports.run = (client, message, args) => {
 var memberavatar = message.author.avatarURL
 var membername = message.author.username
-
   var mentionned = message.mentions.users.first();
   var getvalueof;
-	
   if(mentionned){
       var getvalueof = mentionned;
   } else {
@@ -15,9 +11,9 @@ var membername = message.author.username
   }
 
   if(getvalueof.bot == true){
-    var checkbot = "L'utilisateur est un Bot";
+    var checkbot = "L'utilisateur est un BOT";
 } else {
-    var checkbot = "L'utilisateur n'est pas un Bot";
+    var checkbot = "L'utilisateur n'est pas un BOT";
   }
   if(getvalueof.presence.status == 'online'){
     var status = "Online";
@@ -34,7 +30,7 @@ var membername = message.author.username
     var status = "Invisible"
   }
 message.delete(message.author)
- message.channel.send({
+ message.channel.sendMessage({
     embed: {
       type: 'rich',
       description: `***Requested by : ${message.author.username}***`,
@@ -42,11 +38,11 @@ message.delete(message.author)
         name: ':label: Nickname',
         value: getvalueof.username,
         inline: true
-},{
+      }, {
         name: ':id: Tag',
         value: getvalueof.id,
         inline: true
-},{
+      },{
         name: ':hash:',
         value: getvalueof.discriminator,
         inline: true
@@ -59,7 +55,6 @@ message.delete(message.author)
         value: checkbot,
         inline: true
 }],
-	    
     image: {
   url: getvalueof.avatarURL
     },
