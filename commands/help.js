@@ -1,4 +1,4 @@
-const settings = require('../settings.json');
+const settings = require('../settings.js');
 exports.run = (client, message, params) => {
   if (!params[0]) {
 	const msg = 'message'
