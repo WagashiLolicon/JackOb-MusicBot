@@ -1,7 +1,6 @@
-{
-	"ownerid": "248706764197986304",
-	"modrolename": "Support",
-	"adminrolename": "Administrateur",
-	"prefix": "n!",
-	"token": "Mjg1MzI2OTAxMzMxODg2MTAx.DYSFjQ.83Pty6yDiGtBDAmq_302DFJbcX0"
-}
+	const ownerid = process.env.ownerid
+        const modrolename = process.env.modrole
+	const adminrolename = process.env.adminrole
+	const prefix = process.env.prefix
+	const token = process.env.token 
+
