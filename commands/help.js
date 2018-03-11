@@ -5,7 +5,7 @@ exports.run = (client, message, params) => {
     const commandNames = Array.from(client.commands.keys());
     const longest = commandNames.reduce((long, str) => Math.max(long, str.length), 0);
       message.delete(message.author)
-	message.channel.sendCode('asciidoc', `= Liste des Commandes =\n\n[Use ${settings.prefix}help <commandname> pour plus de détail]\n\n${client.commands.map(c => `${settings.prefix}${c.help.name}${' '.repeat(longest - c.help.name.length)} :: ${c.help.description}`).join('\n')}`).then(response => { response.delete(30000) });
+	message.channel.sendCode('asciidoc', `= Liste des Commandes =\n\n[Use ${process.env.prefix}help <commandname> pour plus de détail]\n\n${client.commands.map(c => `${process.env.prefix}${c.help.name}${' '.repeat(longest - c.help.name.length)} :: ${c.help.description}`).join('\n')}`).then(response => { response.delete(30000) });
   } else {
     let command = params[0];
     if (client.commands.has(command)) {
