@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const settings = require('./settings.js');
+const token = require('./settings.js');
 const chalk = require('chalk');
 const prefix = 'n!'
 const fs = require('fs');
