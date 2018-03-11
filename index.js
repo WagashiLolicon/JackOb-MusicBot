@@ -95,4 +95,4 @@ client.on('error', error => {
 console.error(chalk.red('Error !'));
 });
 
-client.login(client.settings.token);
+client.login(process.env.token);
