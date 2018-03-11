@@ -94,4 +94,4 @@ client.on('error', error => {
 console.error(chalk.red('Error !'));
 });
 
-client.login(settings.token);
+client.login(client.settings.token);
