@@ -1,4 +1,4 @@
-const prefix = 'n!'
+const prefix = require('../settings.js')
 module.exports = message => {
   let client = message.client;
   if (message.author.bot) return;
