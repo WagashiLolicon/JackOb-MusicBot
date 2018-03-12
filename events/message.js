@@ -1,9 +1,9 @@
-const prefix = require('../settings.js')
+const settings = require('../settings.js');
 module.exports = message => {
   let client = message.client;
   if (message.author.bot) return;
-  if (!message.content.startsWith(prefix)) return;
-  let command = message.content.split(' ')[0].slice(prefix.length);
+  if (!message.content.startsWith(settings.prefix)) return;
+  let command = message.content.split(' ')[0].slice(settings.prefix.length);
   let params = message.content.split(' ').slice(1);
   let perms = client.elevation(message);
   let cmd;
